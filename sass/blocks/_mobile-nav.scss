@@ -1,0 +1,131 @@
+.nav-button {
+    position: relative;
+    z-index: 9;
+    display: block;
+    position: relative;
+    background-color: #717171;
+
+    width: 40px;
+    height: 2px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    @media (min-width: 510px) {
+        display: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        outline: none;
+    }
+
+
+}
+
+.nav-button__icon-1 {
+    &::before {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 40px;
+        height: 2px;
+        background-color: #717171;
+        left: 0;
+        top: -8px;
+    }
+}
+
+.nav-button__icon-2 {
+    position: relative;
+    z-index: 9;
+    display: block;
+    position: relative;
+    background-color: #717171;
+
+    width: 40px;
+    height: 2px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    margin-top: 8px;
+
+    &::after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 40px;
+        height: 2px;
+        background-color: #717171;
+        left: 0;
+        bottom: -8px;
+    }
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+
+    width: 200px;
+    height: 320px;
+    background-color: rgba(49, 99, 65, 0.95);
+    padding: 90px 100px 80px 30px;
+
+    .navigation-list-mobile {
+        color: white;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        li {
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.mobile-nav-active {
+    @media (max-width: 510px) {
+        display: flex;
+        opacity: 2;
+        z-index: 5;
+        transition: opacity 0.3s ease-in;
+    }
+}
+
+.nav-button-close {
+    background-color: transparent;
+
+    .nav-button__icon-1 {
+        background-color: transparent;
+
+        &::before {
+            background-color: white;
+
+            transform: rotate(45deg);
+            top: 8px;
+        }
+    }
+
+    .nav-button__icon-2 {
+        background-color: transparent;
+
+        &::after {
+            background-color: white;
+            transform: rotate(-45deg);
+            top: 0;
+        }
+    }
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}

@@ -1,0 +1,64 @@
+html, body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: 768px) {
+        max-width: 668px;
+    }
+
+    @media (max-width: 380px) {
+        max-width: 330px;
+    }
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #EDF2EC;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(184, 180, 180);
+}
+
+.scrollup {
+    position: fixed;
+    right: 2rem;
+    bottom: -20%;
+    display: flex;
+    background-color: #D6E7D2;
+    border-radius: 20px;
+    padding: .45rem;
+    transition: .5c;
+
+    @media (max-width: 510px) {
+        display: none;
+    }
+
+    &:hover {
+        background-color: #C1E698;
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease-out;
+    }
+}
+
+.show-scroll {
+    bottom: 2rem;
+}
+
+.item-blur {
+    filter: blur(2px);
+    transition: 10.3s;
+}
+
+.none {
+    display: none;
+}

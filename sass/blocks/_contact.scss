@@ -1,0 +1,220 @@
+.contact {
+    background: $bg-section-color;
+    text-align: center;
+
+    .container {
+        height: 550px;
+        padding-top: 60px;
+        position: relative;
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 700px;
+        }
+
+        @media (max-width: 380px) {
+            padding-top: 15px;
+            padding-bottom: 0;
+            height: 445px;
+        }
+    }
+    .contact__img {
+        max-width: 400px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        @media (max-width: 768px) {
+            position: relative;
+            width: 200px;
+            padding-top: 250px;
+        }
+
+        @media (max-width: 380px) {
+            width: 100px;
+            padding-top: 134px;
+        }
+    }
+
+    h2 {
+        font-family: 'Inika', serif;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 52px;
+        color: $green-accent-color;
+
+        @media (max-width: 380px) {
+            font-size: 25px;
+        }
+    }
+}
+
+.drop-down {
+    margin-top: 40px;
+    width: 450px;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: $green-accordion-color;
+    transition: background-color 300ms linear;
+    transition: box-shadow 0.3s ease-out;
+    color: #717171;
+    font-size: 20px;
+
+    @media (max-width: 768px) {
+        position:relative;
+        margin-top: 100px;
+    }
+
+    @media (max-width: 470px) {
+        width: 300px;
+        margin-top: 70px;
+    }
+
+    @media (max-width: 380px) {
+        width: 300px;
+        margin-top: 70px;
+    }
+
+    .drop-down__content {
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+
+        svg {
+            fill: #D9D9D9;
+
+            path{
+                stroke: $text-color;
+            }
+        }
+
+        .btn--open {
+            display: none;
+        }
+
+        &:hover {
+            .btn--open {
+                display: block;
+            }
+
+            .btn--close {
+                display: none;
+            }
+        }
+    }
+
+    .drop-down__variants {
+        background: #DCE9D9;
+        display: none;
+
+        ul {
+            padding: 30px 0;
+
+            li {
+                text-align: start;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 40px;
+                color: #499A18;
+                border-bottom: 1px solid #D9D9D9;
+                margin: 2px 50px 0 20px;
+
+                &:hover {
+                    border-bottom: 1px solid #717171;
+                    color: #717171;
+                }
+            }
+        }
+
+    }
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: none;
+        border: 1px solid $green-accordion-color;
+        background-color: #C1E698;
+
+        svg{
+            fill: #AEA1A1;
+
+            path{
+                fill: #AEA1A1;
+                stroke: #FFFFFF;
+            }
+        }
+    }
+}
+
+.adresses {
+    display: none;
+    width: 450px;
+    height: 214px;
+
+    position: absolute;
+    bottom: 83px;
+    right: 0;
+
+    border: 1px solid #000000;
+    border-radius: 20px;
+
+    ul {
+        margin: 17px 35px;
+        // width: 300px;
+    }
+
+    li {
+        display: grid;
+        text-align: start;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 40px;
+
+        p {
+            min-width: 130px;
+        }
+
+        .adresses__info {
+            // padding-right: 40px;
+            color: #717171;
+            width: 190px;
+        }
+    }
+
+    a {
+        border: 1px solid #E06733;
+        border-radius: 5px;
+        font-family: 'Inika';
+        font-weight: 700;
+        font-size: 10px;
+        color: #717171;
+        padding: 5px 45px;
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #E06733;
+            color: white;
+            transition: all 0.3s ease-out;
+        }
+    }
+}
+
+.drop-down__active {
+    .drop-down__variants{
+        display: block;
+    }
+}
+
+.adresses--active {
+    display: block;
+}
